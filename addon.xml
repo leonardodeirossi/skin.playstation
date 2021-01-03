@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.playstation" version="1.0.0" name="Software di Sistema PlayStation 4" provider-name="Sony Interactive Entertainment">
+<addon id="skin.playstation" version="1.0.1" name="Software di Sistema PlayStation 4" provider-name="Sony Interactive Entertainment">
     <requires>
         <import addon="xbmc.gui" version="5.14.0"/>
         <import addon="script.favourites" version="6.0.1" />
