@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- favourites -->
+	<defaultcontrol always="true">450</defaultcontrol>
+	<controls>
+		<!-- Window Background -->
+		<include>WindowFadeBackgroundImage</include>
+
+		<control type="group">
+
+			<!-- Animation -->
+		<animation type="WindowOpen">
+              <effect type="fade" start="0" end="100" time="300" tween="cubic" easing="inout"/>
+              <effect type="zoom" start="120" end="100" time="400" tween="cubic" easing="out" center="auto"/>
+                    </animation>
+<animation type="WindowClose">
+              <effect type="fade" start="100" end="0" time="300" tween="cubic" easing="inout"/>
+              <effect type="zoom" start="100" end="120" time="400" tween="cubic" easing="out"center="auto"/>
+                    </animation>
+
+			<!-- Heading -->
+			<include content="Time">
+				<param name="heading">1036</param>
+			</include>
+
+			<!-- Image -->
+			<control type="image">
+				<left>150</left>
+				<top>225</top>
+				<width>405</width>
+				<height>600</height>
+				<texture>$INFO[Container(450).ListItem.Icon]</texture>
+				<aspectratio aligny="center">keep</aspectratio>
+				<visible>!String.Contains(Container(450).ListItem.Icon,Default)</visible>
+			</control>
+			<control type="image">
+				<left>150</left>
+				<top>225</top>
+				<width>405</width>
+				<height>600</height>
+				<texture>$INFO[Container(450).ListItem.Icon]</texture>
+				<colordiffuse>OverlayColorFO</colordiffuse>
+				<aspectratio aligny="center">keep</aspectratio>
+				<visible>String.Contains(Container(450).ListItem.Icon,Default)</visible>
+			</control>
+
+			<!-- List -->
+			<control type="list" id="450">
+				<left>750</left>
+				<centertop>50%</centertop>
+				<width>1050</width>
+				<height>720</height>
+				<onup>51</onup>
+				<ondown>51</ondown>
+				<onleft>60</onleft>
+				<orientation>vertical</orientation>
+				<viewtype label="535">list</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<itemlayout height="90" width="1050">
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>1050</width>
+						<height>90</height>
+						<font>Font36</font>
+						<label>$VAR[Label1]</label>
+						<textcolor>TextColor2</textcolor>
+					</control>
+				</itemlayout>
+
+				<focusedlayout height="90" width="1050">
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>1050</width>
+						<height>90</height>
+						<font>Font48</font>
+						<label>$VAR[Label1]</label>
+						<textcolor>TextColor1</textcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(450)">Conditional</animation>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1050</width>
+						<height>90</height>
+						<texture>$VAR[focus90]</texture>
+						<visible>Control.HasFocus(450)</visible>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1050</width>
+						<height>90</height>
+						<texture colordiffuse="TextColor2">$VAR[focus90]</texture>
+						<visible>!Control.HasFocus(450)</visible>
+					</control>
+				</focusedlayout>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>
